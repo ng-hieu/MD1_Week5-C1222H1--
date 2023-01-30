@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+<img id="anh" src="pikachu.png" alt="Pikachu" style="top: 0; left: 0; position: relative">
+<script>
+    let x = document.getElementById("anh");
+    let speedX = 5;
+    let speedY = 0;
+    setInterval(() => {
+        x.style.left = parseInt(x.style.left) + speedX + 'px';
+        x.style.top = parseInt(x.style.top) + speedY + 'px';
+        if (parseInt(x.style.left) >= window.innerWidth) {
+            x.style.left = '-150px';
+        }
+        if (parseInt(x.style.top) >= window.innerHeight) {
+            x.style.top = '-150px'
+        }
+        if (parseInt(x.style.left) < speedX - 200) {
+            x.style.left = window.innerWidth + 'px';
+        }
+        if (parseInt(x.style.top) < speedY - 200) {
+            x.style.top = window.innerHeight + 'px';
+        }
+    }, 20)
+    window.addEventListener('keydown', (e) => {
+        switch (e.key) {
+            case "ArrowUp":
+                speedX = 0;
+                speedY = -5;
+                break;
+            case "ArrowDown":
+                speedX = 0;
+                speedY = 5;
+                break;
+            case "ArrowRight":
+                speedX = 5;
+                speedY = 0;
+                break;
+            case "ArrowLeft":
+                speedX = -5;
+                speedY = 0;
+                break;
+        }
+    })
+</script>
+</body>
+</html>
