@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let arr=[[1,2,3],[4,5,6],[9,8,9]];
+  let sum1 = 0;
+  let sum2 = 0;
+  let rs;
+  // for(let i = 0; i<arr.length; i++){
+  //   for(let j = 0;j<arr.length ; j++){
+  //     if(i==j){
+  //     sum1 += arr[i][j];
+  //   }
+  //   }
+  // }
+  for(let i = (arr.length - 1); i>=0; i--){
+    for(let j = 0; j<arr.length; j++){
+      if(j == arr.length - i -1) {
+        sum2 += arr[i][j];
+        console.log(sum2)
+      }
+    }
+  } rs = sum1-sum2;
+  console.log(rs);
+  console.log(sum1)
+
+</script>
+</body>
+</html>
