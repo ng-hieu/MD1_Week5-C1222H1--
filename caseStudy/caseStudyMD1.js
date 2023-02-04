@@ -22,9 +22,9 @@ function minus() {
     document.getElementById("RsSurplus").innerHTML = "Số tiền dư: " + SurplusMoney;
     class Obj1 {
         constructor(item_Date, item_Money, item_Text) {
-            this.Date = item_Date;
-            this.Money = item_Money;
-            this.Text = item_Text;
+            this.Dateminus = item_Date;
+            this.Moneyminus = item_Money;
+            this.Textminus = item_Text;
 
         }
     }
@@ -45,9 +45,9 @@ function add() {
     document.getElementById("RsSurplus").innerHTML = "Số tiền dư: " + SurplusMoney;
     class Obj2 {
         constructor(item_Date, item_Money, item_Text) {
-            this.Date = item_Date;
-            this.Money = item_Money;
-            this.Text = item_Text;
+            this.Dateadd = item_Date;
+            this.Moneyadd = item_Money;
+            this.Textadd = item_Text;
         }
     }
 
@@ -68,11 +68,11 @@ function renderMinus() {
     for (let i = 0; i < dataminus.length; i++) {
         table += `<tr class="backgrminus">
             <td class="textcolortb2">${i + 1}</td>
-            <td class="textcolortb2">${dataminus[i].Date}</td>
-            <td class="textcolortb2">${dataminus[i].Money}</td>
-            <td class="textcolortb2">${dataminus[i].Text}</td>
+            <td class="textcolortb2">${dataminus[i].Dateminus}</td>
+            <td class="textcolortb2">${dataminus[i].Moneyminus}</td>
+            <td class="textcolortb2">${dataminus[i].Textminus}</td>
             <td class="textcolortb2">
-            <button class="btn btn-light" onclick="deleteItemMinus(${i+1})">Xóa</button>
+            <button class="btn btn-light" onclick="deleteItemMinus(${dataminus[i].Moneyminus})">Xóa</button>
             </td>
         </tr>`
     }
@@ -89,11 +89,11 @@ function renderAdd() {
     for (let i = 0; i < dataadd.length; i++) {
         table += `<tr class="backgradd"> 
             <td class="textcolortb2">${i + 1}</td>
-            <td class="textcolortb2">${dataadd[i].Date}</td>
-            <td class="textcolortb2">${dataadd[i].Money}</td>
-            <td class="textcolortb2">${dataadd[i].Text}</td>
+            <td class="textcolortb2">${dataadd[i].Dateadd}</td>
+            <td class="textcolortb2">${dataadd[i].Moneyadd}</td>
+            <td class="textcolortb2">${dataadd[i].Textadd}</td>
             <td class="textcolortb2">
-            <button class="btn btn-light" onclick="deleteItemAdd(${i+1})">Xóa</button>
+            <button class="btn btn-light" onclick="deleteItemAdd(${dataadd[i].Moneyadd })">Xóa</button>
             </td>
         </tr>`
     }
@@ -108,17 +108,24 @@ function clear() {
 
 function deleteItemMinus(x) {
     for (let i = 0; i < dataminus.length; i++) {
-        if (i+1 == x) {
+        if (dataminus[i].Moneyminus == x) {
+            console.log(dataminus[i].Moneyminus)
             dataminus.splice(i, 1);
+            SurplusMoney = SurplusMoney + x;
+            document.getElementById("RsSurplus").innerHTML = "Số tiền dư: " + SurplusMoney;
         }
     }
+    
     renderMinus();
 }
 
 function deleteItemAdd(x) {
     for (let i = 0; i < dataadd.length; i++) {
-        if (i+1 == x) {
+        if (dataadd[i].Moneyadd == x) {
+            console.log(dataadd[i].Moneyadd)
             dataadd.splice(i, 1);
+            SurplusMoney = SurplusMoney - x;
+            document.getElementById("RsSurplus").innerHTML = "Số tiền dư: " + SurplusMoney;
         }
     }
     renderAdd();
