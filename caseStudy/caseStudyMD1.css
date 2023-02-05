@@ -1,0 +1,28 @@
+.text_n_br{
+
+}
+.toptable {
+    vertical-align: top;
+}
+
+.textmidle {
+    text-align: center;
+}
+
+.textcolortb2 {
+    color: #ffffff;
+}
+
+.backgrminus {
+    background-color: #DB3142;
+}
+
+.backgradd {
+    background-color: #0DCAF0;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+}
