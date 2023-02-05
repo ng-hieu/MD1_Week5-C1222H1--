@@ -4,22 +4,25 @@ let RootMoney = 0;
 let SurplusMoney = 0;
 let clickminus = 0;
 let clickadd = 0;
+let rsMinus = 0;
+let rsAdd = 0;
 function Root() {
     RootMoney = parseFloat(document.getElementById("Root").value);
     SurplusMoney = RootMoney;
-    document.getElementById("RsRoot").innerHTML = "Số tiền gốc: " + RootMoney +"Vnđ";
-    document.getElementById("RsRoot").style.color = '#198754';
+    document.getElementById("RsRoot").innerHTML =RootMoney +"Vnđ"; //Số tiền gốc
 }
 
 function minus() {
     clickminus +=1;
-    document.getElementById("RsClickM").innerHTML = "Số lần chi: "+ clickminus;
+    document.getElementById("RsClickM").innerHTML = clickminus;
     let item_date = document.getElementById("Date").value;
     let item_money = parseFloat(document.getElementById("Money").value);
     let item_text = document.getElementById("Textarea").value;
 
     SurplusMoney -= item_money;
-    document.getElementById("RsSurplus").innerHTML = "Số tiền dư: " + SurplusMoney+"Vnđ";
+    document.getElementById("RsSurplus").innerHTML = SurplusMoney+"Vnđ";
+    rsMinus += item_money;
+    document.getElementById("rsMinus").innerHTML = rsMinus+"Vnđ";
     class Obj1 {
         constructor(item_Date, item_Money, item_Text) {
             this.Dateminus = item_Date;
@@ -37,12 +40,14 @@ function minus() {
 
 function add() {
     clickadd +=1;
-    document.getElementById("RsClickA").innerHTML = "Số lần thu: "+ clickadd;
+    document.getElementById("RsClickA").innerHTML =clickadd;
     let item_date = document.getElementById("Date").value;
     let item_money = parseFloat(document.getElementById("Money").value);
     let item_text = document.getElementById("Textarea").value;
     SurplusMoney += item_money;
-    document.getElementById("RsSurplus").innerHTML = "Số tiền dư: " + SurplusMoney+"Vnđ";
+    document.getElementById("RsSurplus").innerHTML = SurplusMoney+"Vnđ";
+    rsAdd += item_money;
+    document.getElementById("rsAdd").innerHTML = rsAdd+"Vnđ";
     class Obj2 {
         constructor(item_Date, item_Money, item_Text) {
             this.Dateadd = item_Date;
@@ -58,7 +63,10 @@ function add() {
 }
 
 function renderMinus() {
-    let table = `<tr class="backgrminus">
+    let table = `<tr>
+            <th colspan="5" style="text-align: center; color: #DB3142">Tiền Chi</th>
+        </tr>
+       <tr class="backgrminus">
             <th class="textcolortb2">STT</th>
             <th class="textcolortb2">Ngày</th>
             <th class="textcolortb2">Số tiền</th>
@@ -79,7 +87,10 @@ function renderMinus() {
     document.getElementById("tableminus").innerHTML = table;
 }
 function renderAdd() {
-    let table = `<tr class="backgradd">
+    let table = `<tr>
+            <th colspan="5" style="text-align: center; color: #0DCAF0">Tiền Thu</th>
+        </tr>
+        <tr class="backgradd">
             <th class="textcolortb2">STT</th>
             <th class="textcolortb2">Ngày</th>
             <th class="textcolortb2">Số tiền</th>
@@ -112,7 +123,7 @@ function deleteItemMinus(x) {
             console.log(dataminus[i].Moneyminus)
             dataminus.splice(i, 1);
             SurplusMoney = SurplusMoney + x;
-            document.getElementById("RsSurplus").innerHTML = "Số tiền dư: " + SurplusMoney+"Vnđ";
+            document.getElementById("RsSurplus").innerHTML = SurplusMoney+"Vnđ";
         }
     }
     
@@ -125,7 +136,7 @@ function deleteItemAdd(x) {
             console.log(dataadd[i].Moneyadd)
             dataadd.splice(i, 1);
             SurplusMoney = SurplusMoney - x;
-            document.getElementById("RsSurplus").innerHTML = "Số tiền dư: " + SurplusMoney+"Vnđ";
+            document.getElementById("RsSurplus").innerHTML = SurplusMoney+"Vnđ";
         }
     }
     renderAdd();

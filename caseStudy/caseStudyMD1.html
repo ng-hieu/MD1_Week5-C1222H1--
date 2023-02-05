@@ -8,71 +8,100 @@
     <link rel="stylesheet" href="caseStudyMD1.css">
 </head>
 <body>
-<h1>Quản Lý Chi Tiêu</h1>
-<table style="border:1px solid black;margin-left:auto;margin-right:auto;">
+<u class="fonttitle" style="color: #4c429b"><h1>Quản Lý Chi Tiêu</h1></u>
+<table style="margin-left:auto;margin-right:auto;">
     <tr>
-        <td>
-            <table border="1">
+        <td class="toptable">
+            <table>
                 <tr>
-                    <th colspan="2" style="color: white; background-color: rgba(186,118,252,0.57); text-align: center ">
-                        Nhập dữ liệu
-                    </th>
+                    <th colspan="2" class="fonttable">Nhập Dữ Liệu</th>
                 </tr>
                 <tr class="toptable">
                     <td>
-                        <label for="Root"><b>Số Tiền Gốc</b></label>
+                        <label for="Root" class="fontitem"><b>Số Tiền Gốc</b></label>
                     </td>
                     <td>
-                        <input autofocus type="number" id="Root">
-                    </td>
-                </tr>
-                <tr class="toptable">
-                    <td>
-                        <label for="Date"><b>Ngày</b></label>
-                    </td>
-                    <td>
-                        <input type="date" id="Date">
+                        <input autofocus type="number" id="Root" class="inputt">
                     </td>
                 </tr>
                 <tr class="toptable">
                     <td>
-                        <label for="Money"><b>Số Tiền</b></label>
+                        <label for="Date" class="fontitem"><b>Ngày</b></label>
                     </td>
                     <td>
-                        <input autofocus type="number" id="Money">
+                        <input type="date" id="Date" class="inputt">
                     </td>
                 </tr>
                 <tr class="toptable">
                     <td>
-                        <label for="Textarea"><b>Ghi Chú</b></label>
+                        <label for="Money" class="fontitem"><b>Số Tiền</b></label>
                     </td>
                     <td>
-                        <textarea id="Textarea" rows="4" cols="23"></textarea>
+                        <input autofocus type="number" id="Money" class="inputt">
+                    </td>
+                </tr>
+                <tr class="toptable">
+                    <td>
+                        <label for="Textarea" class="fontitem"><b>Ghi Chú</b></label>
+                    </td>
+                    <td>
+                        <textarea id="Textarea" rows="4" cols="22" class="inputt"></textarea>
                     </td>
                 </tr>
                 <tr>
                     <td class="textmidle">
-                        <button type="button" class="btn btn-success" style="color: white" onclick="Root()">Nhập
+                        <button type="button" class="btn btn-success" style="color: white; font-size: 18px" onclick="Root()">Nhập
                         </button>
                     </td>
                     <td class="textmidle">
-                        <button type="button" class="btn btn-danger" style="color: white" onclick="minus()">Chi</button>
-                        <button type="button" class="btn btn-info " style="color: white" onclick="add()">Thu</button>
+                        <button type="button" class="btn btn-danger" style="color: white; font-size: 18px" onclick="minus()">Chi</button>
+                        <button type="button" class="btn btn-info " style="color: white; font-size: 18px" onclick="add()">Thu</button>
                     </td>
+                </tr>
+                <tr>
+                    <th style="color: #198754; font-size: 19px;">Số tiền gốc:</th>
+                    <td style="color: #198754; font-size: 19px;">
+                        <u><b id="RsRoot" ></b></u>
+                    </td>
+                <tr>
+                    <th style="color: #4c429b; font-size: 19px;">Số tiền dư:</th>
+                    <td style="color: #4c429b; font-size: 19px;">
+                       <u><b id="RsSurplus" ></b></u>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="textColorMinus">Số lần chi:</th>
+                    <td class="textColorMinus">
+                        <b id="RsClickM"></b>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="textColorMinus">Số tiền chi:</th>
+                    <th id="rsMinus" class="textColorMinus"></th>
+                </tr>
+                <tr>
+                    <th class="textColorAdd">Số lần thu: </th>
+                    <td class="textColorAdd">
+                        <b id="RsClickA"></b>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="textColorAdd">Số tiền thu:</th>
+                    <th id="rsAdd" class="textColorAdd"></th>
                 </tr>
             </table>
         </td>
         <td class="toptable">
-            <table border="1">
+            <table>
                 <tr class="textmidle">
-                    <th style="color: white; background-color: rgba(186,118,252,0.57); text-align: center ">Tiền Chi
-                    </th>
-                    <th style="color: white; background-color: rgba(186,118,252,0.57); text-align: center ">Tiền Thu
-                    </th>
+                    <th colspan="2" class="fonttable">Bảng Theo Dõi</th>
                 </tr>
                 <tr class="toptable">
                     <td>
                         <table class="table table-borderless" id="tableminus">
+                            <tr>
+                                <th colspan="5" style="text-align: center; color: #DB3142; font-size: 19px">Tiền Chi</th>
+                            </tr>
                             <tr class="backgrminus">
                                 <th class="textcolortb2">STT</th>
                                 <th class="textcolortb2">Ngày</th>
@@ -84,6 +113,9 @@
                     </td>
                     <td>
                         <table class="table table-borderless" id="tableadd">
+                            <tr>
+                                <th colspan="5" style="text-align: center; color: #0DCAF0; font-size: 19px">Tiền Thu</th>
+                            </tr>
                             <tr class="backgradd">
                                 <th class="textcolortb2">STT</th>
                                 <th class="textcolortb2">Ngày</th>
@@ -95,26 +127,6 @@
                     </td>
                 </tr>
             </table>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b id="RsRoot"></b>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b id="RsSurplus"></b>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b id="RsClickM"></b>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <b id="RsClickA"></b>
         </td>
     </tr>
 </table>
