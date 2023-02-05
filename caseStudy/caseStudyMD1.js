@@ -64,7 +64,7 @@ function add() {
 
 function renderMinus() {
     let table = `<tr>
-            <th colspan="5" style="text-align: center; color: #DB3142">Tiền Chi</th>
+            <th colspan="5" style="text-align: center; color: #DB3142; font-size: 19px">Tiền Chi</th>
         </tr>
        <tr class="backgrminus">
             <th class="textcolortb2">STT</th>
@@ -88,7 +88,7 @@ function renderMinus() {
 }
 function renderAdd() {
     let table = `<tr>
-            <th colspan="5" style="text-align: center; color: #0DCAF0">Tiền Thu</th>
+            <th colspan="5" style="text-align: center; color: #0DCAF0; font-size: 19px">Tiền Thu</th>
         </tr>
         <tr class="backgradd">
             <th class="textcolortb2">STT</th>
