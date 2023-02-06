@@ -62,3 +62,15 @@ body{
     background-attachment: fixed; /*Đảm bảo toàn bộ phần tử được bao phủ trong background*/
     background-size: 100% 100%; /*Giúp hình ảnh bao phủ toàn bộ phần tử*/
 }
+.boxshadow{
+    border: 2px double #4c429b;
+    box-shadow: 6px 6px #cec8ef;
+    background-color: white;
+}
+.buttonshow{
+    border: 2px double #4c429b;
+    background-color: #4c429b;
+    color:white;
+    font-size: 17px;
+    font-family: "#9Slide03 Encode SeEx ExLight";
+}

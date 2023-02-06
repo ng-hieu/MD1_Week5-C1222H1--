@@ -118,12 +118,16 @@ function clear() {
 }
 
 function deleteItemMinus(x) {
+    clickminus -= 1;
+    document.getElementById("RsClickM").innerHTML = clickminus;
     for (let i = 0; i < dataminus.length; i++) {
         if (dataminus[i].Moneyminus == x) {
             console.log(dataminus[i].Moneyminus)
             dataminus.splice(i, 1);
             SurplusMoney = SurplusMoney + x;
             document.getElementById("RsSurplus").innerHTML = SurplusMoney+"Vnđ";
+            rsMinus = rsMinus - x;
+            document.getElementById("rsMinus").innerHTML = rsMinus+"Vnđ";
         }
     }
     
@@ -131,12 +135,16 @@ function deleteItemMinus(x) {
 }
 
 function deleteItemAdd(x) {
+    clickadd -=1;
+    document.getElementById("RsClickA").innerHTML =clickadd;
     for (let i = 0; i < dataadd.length; i++) {
         if (dataadd[i].Moneyadd == x) {
             console.log(dataadd[i].Moneyadd)
             dataadd.splice(i, 1);
             SurplusMoney = SurplusMoney - x;
             document.getElementById("RsSurplus").innerHTML = SurplusMoney+"Vnđ";
+            rsAdd = rsAdd -x;
+            document.getElementById("rsAdd").innerHTML = rsAdd+"Vnđ";
         }
     }
     renderAdd();
