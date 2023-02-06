@@ -56,3 +56,9 @@ h1 {
 .inputt{
     font-size: 19px;
 }
+body{
+    background-image: url("Studycase.png");
+    background-repeat: no-repeat; /*Tránh lặp ảnh*/
+    background-attachment: fixed; /*Đảm bảo toàn bộ phần tử được bao phủ trong background*/
+    background-size: 100% 100%; /*Giúp hình ảnh bao phủ toàn bộ phần tử*/
+}
